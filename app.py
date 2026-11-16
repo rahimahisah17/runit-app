@@ -5,8 +5,7 @@ MESSAGE = "Hello from ShipIt Weekend!"
 
 
 def home_page():
-    discount = int(os.environ["DISCOUNT_PERCENT"])   # new feature: show a discount
-    return f"<h1>{MESSAGE}</h1><p>Today only: {discount}% off all courses!</p>"
+    return f"<h1>{MESSAGE}</h1><p>Now with a health check, an SLO and a rollback plan.</p>"
 
 
 class Handler(BaseHTTPRequestHandler):
