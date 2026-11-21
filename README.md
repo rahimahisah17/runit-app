@@ -191,8 +191,6 @@ az ad sp create-for-rbac --name runit-github --role contributor \
 
 Save the JSON output as a repository secret named **`AZURE_CREDENTIALS`** (Settings → Secrets and variables → Actions).
 
-</details>
-
 ### Troubleshooting
 
 | Symptom | Cause | Fix |
