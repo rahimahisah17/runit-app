@@ -1,4 +1,4 @@
-# RunIt App — Ship, Break and Recover
+# RunIt App - Ship, Break and Recover
 
 [![deploy](https://github.com/rahimahisah17/runit-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/rahimahisah17/runit-app/actions/workflows/deploy.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
@@ -261,8 +261,8 @@ The repo, the postmortem and the container images in GHCR remain.
 
 ## Author
 
-**Rahimah Isah** — DevOps / Cloud Engineer
+**Rahimah Sulayman** - DevOps / Cloud Engineer
 
 - GitHub: [@rahimahisah17](https://github.com/rahimahisah17)
 - DEV: [@rahimah_dev](https://dev.to/rahimah_dev)
-- 📝 Read the full write-up on DEV: *[ARTICLE_LINK]*
+- Read the full write-up on DEV: https://dev.to/rahimah_dev/ship-it-break-it-fix-it-running-a-python-app-on-azure-container-apps-with-an-slo-a-rollback-and-2dd2
