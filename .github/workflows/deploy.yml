@@ -36,3 +36,30 @@ jobs:
 
       - name: Deploy to Azure Container Apps
         run: az containerapp update --name runit-app --resource-group runit-rg --image "$IMAGE"
+
+      - name: Verify the new revision is healthy
+        run: |
+          REV=$(az containerapp show --name runit-app --resource-group runit-rg --query properties.latestRevisionName -o tsv)
+          echo "Waiting for revision $REV ..."
+          for i in $(seq 1 30); do
+            STATE=$(az containerapp revision show --name runit-app --resource-group runit-rg --revision "$REV" --query properties.runningState -o tsv)
+            HEALTH=$(az containerapp revision show --name runit-app --resource-group runit-rg --revision "$REV" --query properties.healthState -o tsv)
+            echo "attempt $i: state=$STATE health=$HEALTH"
+            if [ "$STATE" = "Running" ] && [ "$HEALTH" = "Healthy" ]; then
+              echo "Revision $REV is live and healthy."
+              exit 0
+            fi
+            if [ "$STATE" = "Failed" ]; then
+              echo "::error::Revision $REV failed to start. Traffic stayed on the previous revision. Check: az containerapp logs show --type system"
+              exit 1
+            fi
+            sleep 10
+          done
+          echo "::error::Revision $REV did not become healthy within 5 minutes."
+          exit 1
+
+      - name: Smoke test the live app
+        run: |
+          URL=https://$(az containerapp show --name runit-app --resource-group runit-rg --query properties.configuration.ingress.fqdn -o tsv)
+          bash check.sh "$URL" | tee result.txt
+          grep -q "SLO met" result.txt
