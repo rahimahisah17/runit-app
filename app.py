@@ -1,11 +1,16 @@
 import os
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
-MESSAGE = "Hello from ShipIt Weekend!"
+# Required setting: read once at startup, outside any try/except.
+# If it's missing, the app crashes here and never serves a request.
+DISCOUNT = int(os.environ["DISCOUNT_PERCENT"])
+
+# Optional setting: a safe default is fine.
+MESSAGE = os.environ.get("MESSAGE", "Hello from ShipIt Weekend!")
 
 
 def home_page():
-    return f"<h1>{MESSAGE}</h1><p>Now with a health check, an SLO and a rollback plan.</p>"
+    return f"<h1>{MESSAGE}</h1><p>Today only: {DISCOUNT}% off all courses!</p>"
 
 
 class Handler(BaseHTTPRequestHandler):
