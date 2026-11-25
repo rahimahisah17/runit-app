@@ -1,6 +1,5 @@
-# RunIt App — Ship, Break and Recover
+# RunIt App - Ship, Break and Recover
 
-[![deploy](https://github.com/rahimahisah17/runit-app/actions/workflows/deploy.yml/badge.svg)](https://github.com/rahimahisah17/runit-app/actions/workflows/deploy.yml)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-container-2496ED?logo=docker&logoColor=white)
 ![Azure Container Apps](https://img.shields.io/badge/Azure-Container%20Apps-0078D4?logo=microsoftazure&logoColor=white)
@@ -345,9 +344,9 @@ The repo, the postmortem and the container images in GHCR remain.
 
 ## Author
 
-**Rahimah Sulayman** — DevOps / Cloud Engineer
+**Rahimah Sulayman** - DevOps / Cloud Engineer
 
 - GitHub: [@rahimahisah17](https://github.com/rahimahisah17)
 - DEV: [@rahimah_dev](https://dev.to/rahimah_dev)
-- Part 1: *[PART_1_ARTICLE_LINK]*
-- Part 2: *[PART_2_ARTICLE_LINK]*
+- Part 1: https://dev.to/rahimah_dev/ship-it-break-it-fix-it-running-a-python-app-on-azure-container-apps-with-an-slo-a-rollback-and-2dd2
+- Part 2: https://dev.to/rahimah_dev/a-reader-was-right-failing-fast-would-have-saved-my-users-azure-container-apps-part-2-3jc7
